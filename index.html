@@ -1,1125 +1,1220 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pazaib London - Luxury Jewellery</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jewls London - Luxury Jewellery</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <style>
-        /* Global Styles */
-        :root {
-            --gold: #d4af37;
-            --silver: #C0C0C0;
-            --black: #000000;
-            --white: #ffffff;
-            --gray: #f8f8f8;
-            --dark-gray: #333;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Cormorant Garamond', 'Times New Roman', serif;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--black);
-            background-color: var(--white);
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 400;
-            letter-spacing: 1px;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-        }
-        
-        ul {
-            list-style: none;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            display: inline-block;
-        }
-        
-        .section-title h2:after {
-            content: '';
-            display: block;
-            width: 50%;
-            height: 1px;
-            background-color: var(--gold);
-            margin: 15px auto 0;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background-color: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: var(--gold);
-            color: var(--white);
-        }
-        
-        /* Header Styles */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--black);
-        }
-        
-        .logo span {
-            color: var(--gold);
-        }
-        
-        .nav-menu {
-            display: flex;
-        }
-        
-        .nav-menu li {
-            margin-left: 30px;
-        }
-        
-        .nav-menu a {
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            position: relative;
-        }
-        
-        .nav-menu a:after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background-color: var(--gold);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-menu a:hover:after {
-            width: 100%;
-        }
-        
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-        
-        .hamburger div {
-            width: 25px;
-            height: 2px;
-            background-color: var(--black);
-            margin: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/api/placeholder/1920/1080') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-        }
-        
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            letter-spacing: 1px;
-        }
-        
-        /* About Section */
-        .about {
-            background-color: var(--white);
-        }
-        
+      /* Global Styles */
+      :root {
+        --gold: #d4af37;
+        --silver: #c0c0c0;
+        --black: #000000;
+        --white: #ffffff;
+        --gray: #f8f8f8;
+        --dark-gray: #333;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--black);
+        background-color: var(--white);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        display: inline-block;
+      }
+
+      .section-title h2:after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 1px;
+        background-color: var(--gold);
+        margin: 15px auto 0;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 28px;
+        background-color: transparent;
+        border: 1px solid var(--gold);
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: var(--gold);
+        color: var(--white);
+      }
+
+      /* Header Styles */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: all 0.3s ease;
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--black);
+      }
+
+      .logo span {
+        color: var(--gold);
+      }
+
+      .nav-menu {
+        display: flex;
+      }
+
+      .nav-menu li {
+        margin-left: 30px;
+      }
+
+      .nav-menu a {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        position: relative;
+      }
+
+      .nav-menu a:after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: var(--gold);
+        transition: width 0.3s ease;
+      }
+
+      .nav-menu a:hover:after {
+        width: 100%;
+      }
+
+      .hamburger {
+        display: none;
+        cursor: pointer;
+      }
+
+      .hamburger div {
+        width: 25px;
+        height: 2px;
+        background-color: var(--black);
+        margin: 5px;
+        transition: all 0.3s ease;
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("/api/placeholder/1920/1080") center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: var(--white);
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+      }
+
+      /* About Section */
+      .about {
+        background-color: var(--white);
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+      }
+
+      .about-image {
+        flex: 1;
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        border: 10px solid var(--gray);
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      .about-text h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .about-text h3:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 1px;
+        background-color: var(--gold);
+      }
+
+      .about-text p {
+        margin-bottom: 20px;
+        line-height: 1.8;
+      }
+
+      /* Collection Section */
+      .collection {
+        background-color: var(--gray);
+      }
+
+      .collection-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .collection-item {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .collection-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .collection-item img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        transition: all 0.5s ease;
+      }
+
+      .collection-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .collection-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        color: var(--white);
+        transform: translateY(100%);
+        transition: all 0.3s ease;
+      }
+
+      .collection-item:hover .collection-overlay {
+        transform: translateY(0);
+      }
+
+      .collection-overlay h3 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+
+      .collection-overlay p {
+        font-size: 0.9rem;
+        color: var(--silver);
+      }
+
+      .collection-price {
+        font-size: 1.1rem;
+        color: var(--gold);
+        margin-top: 10px;
+      }
+
+      /* Contact Section */
+      .contact {
+        background-color: var(--white);
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+      }
+
+      .contact-form {
+        background-color: var(--gray);
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-form h3 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--gold);
+      }
+
+      textarea.form-control {
+        height: 150px;
+        resize: none;
+      }
+
+      .contact-info {
+        padding: 40px;
+      }
+
+      .contact-info h3 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+      }
+
+      .contact-details {
+        margin-bottom: 30px;
+      }
+
+      .contact-detail {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        background-color: var(--gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        margin-right: 15px;
+      }
+
+      .contact-text h4 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+      }
+
+      .map-container {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        margin-top: 30px;
+      }
+
+      .map-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark-gray);
+        color: var(--white);
+        padding: 50px 0 20px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-logo {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+      }
+
+      .footer-logo span {
+        color: var(--gold);
+      }
+
+      .footer-about p {
+        margin-bottom: 20px;
+        color: #ccc;
+        line-height: 1.8;
+      }
+
+      .footer-title {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 1px;
+        background-color: var(--gold);
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: #ccc;
+        transition: all 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--gold);
+        padding-left: 5px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-link {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background-color: var(--gold);
+        transform: translateY(-5px);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #999;
+        font-size: 0.9rem;
+      }
+
+      /* Modal */
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .modal.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal-content {
+        width: 90%;
+        max-width: 900px;
+        background-color: var(--white);
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        transform: scale(0.8);
+        transition: all 0.3s ease;
+      }
+
+      .modal.active .modal-content {
+        transform: scale(1);
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 1.5rem;
+        color: var(--white);
+        cursor: pointer;
+        z-index: 2001;
+      }
+
+      .modal-body {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .modal-image {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .modal-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .modal-info {
+        flex: 1;
+        min-width: 300px;
+        padding: 40px;
+      }
+
+      .modal-title {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .modal-category {
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+      }
+
+      .modal-price {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      .modal-description {
+        margin-bottom: 30px;
+        line-height: 1.8;
+      }
+
+      .modal-actions {
+        display: flex;
+        gap: 15px;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
         .about-content {
-            display: flex;
-            align-items: center;
-            gap: 60px;
+          flex-direction: column;
         }
-        
-        .about-image {
-            flex: 1;
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            border: 10px solid var(--gray);
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .about-text h3:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 1px;
-            background-color: var(--gold);
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-        
-        /* Collection Section */
-        .collection {
-            background-color: var(--gray);
-        }
-        
-        .collection-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .collection-item {
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .collection-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .collection-item img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: all 0.5s ease;
-        }
-        
-        .collection-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .collection-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            color: var(--white);
-            transform: translateY(100%);
-            transition: all 0.3s ease;
-        }
-        
-        .collection-item:hover .collection-overlay {
-            transform: translateY(0);
-        }
-        
-        .collection-overlay h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        
-        .collection-overlay p {
-            font-size: 0.9rem;
-            color: var(--silver);
-        }
-        
-        .collection-price {
-            font-size: 1.1rem;
-            color: var(--gold);
-            margin-top: 10px;
-        }
-        
-        /* Contact Section */
-        .contact {
-            background-color: var(--white);
-        }
-        
+
         .contact-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 50px;
+          grid-template-columns: 1fr;
         }
-        
-        .contact-form {
-            background-color: var(--gray);
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .contact-form h3 {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--gold);
-        }
-        
-        textarea.form-control {
-            height: 150px;
-            resize: none;
-        }
-        
-        .contact-info {
-            padding: 40px;
-        }
-        
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-        }
-        
-        .contact-details {
-            margin-bottom: 30px;
-        }
-        
-        .contact-detail {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background-color: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            margin-right: 15px;
-        }
-        
-        .contact-text h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-        
-        .map-container {
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
-            margin-top: 30px;
-        }
-        
-        .map-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-gray);
-            color: var(--white);
-            padding: 50px 0 20px;
-        }
-        
+
         .footer-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
+          grid-template-columns: repeat(2, 1fr);
         }
-        
-        .footer-logo {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
+      }
+
+      @media (max-width: 768px) {
+        .section {
+          padding: 60px 0;
         }
-        
-        .footer-logo span {
-            color: var(--gold);
+
+        .section-title h2 {
+          font-size: 2rem;
         }
-        
-        .footer-about p {
-            margin-bottom: 20px;
-            color: #ccc;
-            line-height: 1.8;
+
+        .hero-content h1 {
+          font-size: 2.5rem;
         }
-        
-        .footer-title {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
+
+        .nav-menu {
+          position: fixed;
+          top: 80px;
+          right: -100%;
+          width: 70%;
+          height: calc(100vh - 80px);
+          background-color: var(--white);
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          padding-top: 40px;
+          transition: all 0.5s ease;
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
         }
-        
-        .footer-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 1px;
-            background-color: var(--gold);
+
+        .nav-menu.active {
+          right: 0;
         }
-        
-        .footer-links li {
-            margin-bottom: 10px;
+
+        .nav-menu li {
+          margin: 0 0 20px 0;
         }
-        
-        .footer-links a {
-            color: #ccc;
-            transition: all 0.3s ease;
+
+        .hamburger {
+          display: block;
         }
-        
-        .footer-links a:hover {
-            color: var(--gold);
-            padding-left: 5px;
+
+        .hamburger.active div:nth-child(1) {
+          transform: rotate(-45deg) translate(-5px, 6px);
         }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
+
+        .hamburger.active div:nth-child(2) {
+          opacity: 0;
         }
-        
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            transition: all 0.3s ease;
+
+        .hamburger.active div:nth-child(3) {
+          transform: rotate(45deg) translate(-5px, -6px);
         }
-        
-        .social-link:hover {
-            background-color: var(--gold);
-            transform: translateY(-5px);
+
+        .footer-container {
+          grid-template-columns: 1fr;
         }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #999;
-            font-size: 0.9rem;
-        }
-        
-        /* Modal */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .modal.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .modal-content {
-            width: 90%;
-            max-width: 900px;
-            background-color: var(--white);
-            border-radius: 5px;
-            overflow: hidden;
-            position: relative;
-            transform: scale(0.8);
-            transition: all 0.3s ease;
-        }
-        
-        .modal.active .modal-content {
-            transform: scale(1);
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5rem;
-            color: var(--white);
-            cursor: pointer;
-            z-index: 2001;
-        }
-        
-        .modal-body {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        
-        .modal-image {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .modal-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .modal-info {
-            flex: 1;
-            min-width: 300px;
-            padding: 40px;
-        }
-        
-        .modal-title {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        
-        .modal-category {
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-        }
-        
-        .modal-price {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .modal-description {
-            margin-bottom: 30px;
-            line-height: 1.8;
-        }
-        
-        .modal-actions {
-            display: flex;
-            gap: 15px;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .section {
-                padding: 60px 0;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                right: -100%;
-                width: 70%;
-                height: calc(100vh - 80px);
-                background-color: var(--white);
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 40px;
-                transition: all 0.5s ease;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-            }
-            
-            .nav-menu.active {
-                right: 0;
-            }
-            
-            .nav-menu li {
-                margin: 0 0 20px 0;
-            }
-            
-            .hamburger {
-                display: block;
-            }
-            
-            .hamburger.active div:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-            
-            .hamburger.active div:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .hamburger.active div:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px);
-            }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header id="header">
-        <div class="container header-container">
-            <a href="#" class="logo">Pazaib <span>London</span></a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#collection">Collection</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" class="shop-link">Shop</a></li>
-                </ul>
-                <div class="hamburger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
-            </nav>
-        </div>
+      <div class="container header-container">
+        <a href="#" class="logo">Jewls <span>London</span></a>
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" class="shop-link">Shop</a></li>
+          </ul>
+          <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        </nav>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Pazaib London</h1>
-                <p>Exquisite Craftsmanship, Timeless Elegance</p>
-                <a href="#collection" class="btn">Explore Our Collection</a>
-            </div>
+      <div class="container">
+        <div class="hero-content">
+          <h1>Jewls London</h1>
+          <p>Exquisite Craftsmanship, Timeless Elegance</p>
+          <a href="#collection" class="btn">Explore Our Collection</a>
         </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about section">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Us</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="/api/placeholder/600/800" alt="Pazaib Workshop">
-                </div>
-                <div class="about-text">
-                    <h3>Our Heritage</h3>
-                    <p>Founded in 2010 in the heart of London, Pazaib has established itself as a distinguished name in luxury jewellery. Our pieces blend traditional craftsmanship with contemporary design, creating exquisite heirlooms that transcend time.</p>
-                    <p>Each creation at Pazaib tells a unique story, crafted by master artisans using only the finest ethically sourced materials - from brilliant diamonds to precious gemstones and metals of the highest quality.</p>
-                    <p>What distinguishes Pazaib is our unwavering commitment to excellence and attention to detail. Each piece undergoes rigorous quality control to ensure it meets our exceptional standards before reaching our discerning clientele.</p>
-                    <a href="#collection" class="btn">Discover More</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>About Us</h2>
         </div>
+        <div class="about-content">
+          <div class="about-image">
+            <img src="/api/placeholder/600/800" alt="Jewls Workshop" />
+          </div>
+          <div class="about-text">
+            <h3>Our Heritage</h3>
+            <p>
+              Founded in 2010 in the heart of London, Jewls has established
+              itself as a distinguished name in luxury jewellery. Our pieces
+              blend traditional craftsmanship with contemporary design, creating
+              exquisite heirlooms that transcend time.
+            </p>
+            <p>
+              Each creation at Jewls tells a unique story, crafted by master
+              artisans using only the finest ethically sourced materials - from
+              brilliant diamonds to precious gemstones and metals of the highest
+              quality.
+            </p>
+            <p>
+              What distinguishes Jewls is our unwavering commitment to
+              excellence and attention to detail. Each piece undergoes rigorous
+              quality control to ensure it meets our exceptional standards
+              before reaching our discerning clientele.
+            </p>
+            <a href="#collection" class="btn">Discover More</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Collection Section -->
     <section id="collection" class="collection section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Collection</h2>
-            </div>
-            <div class="collection-grid">
-                <!-- Collection Item 1 -->
-                <div class="collection-item" data-id="1">
-                    <img src="/api/placeholder/Celestial-Diamond-Ring.png" alt="Diamond Ring">
-                    <div class="collection-overlay">
-                        <h3>Celestial Diamond Ring</h3>
-                        <p>Platinum & Diamond</p>
-                        <div class="collection-price">£3,250</div>
-                    </div>
-                </div>
-                
-                <!-- Collection Item 2 -->
-                <div class="collection-item" data-id="2">
-                    <img src="/api/placeholder/400/600" alt="Sapphire Necklace">
-                    <div class="collection-overlay">
-                        <h3>Azure Sapphire Pendant</h3>
-                        <p>18K Gold & Sapphire</p>
-                        <div class="collection-price">£2,780</div>
-                    </div>
-                </div>
-                
-                <!-- Collection Item 3 -->
-                <div class="collection-item" data-id="3">
-                    <img src="/api/placeholder/400/600" alt="Gold Bracelet">
-                    <div class="collection-overlay">
-                        <h3>Infinity Gold Bracelet</h3>
-                        <p>18K Gold</p>
-                        <div class="collection-price">£1,950</div>
-                    </div>
-                </div>
-                
-                <!-- Collection Item 4 -->
-                <div class="collection-item" data-id="4">
-                    <img src="/api/placeholder/400/600" alt="Pearl Earrings">
-                    <div class="collection-overlay">
-                        <h3>Luminous Pearl Earrings</h3>
-                        <p>Sterling Silver & Pearl</p>
-                        <div class="collection-price">£890</div>
-                    </div>
-                </div>
-                
-                <!-- Collection Item 5 -->
-                <div class="collection-item" data-id="5">
-                    <img src="/api/placeholder/400/600" alt="Emerald Ring">
-                    <div class="collection-overlay">
-                        <h3>Emerald Halo Ring</h3>
-                        <p>18K Gold, Emerald & Diamond</p>
-                        <div class="collection-price">£4,150</div>
-                    </div>
-                </div>
-                
-                <!-- Collection Item 6 -->
-                <div class="collection-item" data-id="6">
-                    <img src="/api/placeholder/400/600" alt="Diamond Bracelet">
-                    <div class="collection-overlay">
-                        <h3>Cascade Diamond Bracelet</h3>
-                        <p>Platinum & Diamond</p>
-                        <div class="collection-price">£5,680</div>
-                    </div>
-                </div>
-                
-                <!-- Collection Item 7 -->
-                <div class="collection-item" data-id="7">
-                    <img src="/api/placeholder/400/600" alt="Ruby Necklace">
-                    <div class="collection-overlay">
-                        <h3>Crimson Ruby Necklace</h3>
-                        <p>18K Gold & Ruby</p>
-                        <div class="collection-price">£3,490</div>
-                    </div>
-                </div>
-                
-                <!-- Collection Item 8 -->
-                <div class="collection-item" data-id="8">
-                    <img src="/api/placeholder/400/600" alt="Diamond Earrings">
-                    <div class="collection-overlay">
-                        <h3>Starburst Diamond Earrings</h3>
-                        <p>18K White Gold & Diamond</p>
-                        <div class="collection-price">£2,350</div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Collection</h2>
         </div>
+        <div class="collection-grid">
+          <!-- Collection Item 1 -->
+          <div class="collection-item" data-id="1">
+            <img
+              src="/api/placeholder/Celestial-Diamond-Ring.png"
+              alt="Diamond Ring"
+            />
+            <div class="collection-overlay">
+              <h3>Celestial Diamond Ring</h3>
+              <p>Platinum & Diamond</p>
+              <div class="collection-price">£3,250</div>
+            </div>
+          </div>
+
+          <!-- Collection Item 2 -->
+          <div class="collection-item" data-id="2">
+            <img src="/api/placeholder/400/600" alt="Sapphire Necklace" />
+            <div class="collection-overlay">
+              <h3>Azure Sapphire Pendant</h3>
+              <p>18K Gold & Sapphire</p>
+              <div class="collection-price">£2,780</div>
+            </div>
+          </div>
+
+          <!-- Collection Item 3 -->
+          <div class="collection-item" data-id="3">
+            <img src="/api/placeholder/400/600" alt="Gold Bracelet" />
+            <div class="collection-overlay">
+              <h3>Infinity Gold Bracelet</h3>
+              <p>18K Gold</p>
+              <div class="collection-price">£1,950</div>
+            </div>
+          </div>
+
+          <!-- Collection Item 4 -->
+          <div class="collection-item" data-id="4">
+            <img src="/api/placeholder/400/600" alt="Pearl Earrings" />
+            <div class="collection-overlay">
+              <h3>Luminous Pearl Earrings</h3>
+              <p>Sterling Silver & Pearl</p>
+              <div class="collection-price">£890</div>
+            </div>
+          </div>
+
+          <!-- Collection Item 5 -->
+          <div class="collection-item" data-id="5">
+            <img src="/api/placeholder/400/600" alt="Emerald Ring" />
+            <div class="collection-overlay">
+              <h3>Emerald Halo Ring</h3>
+              <p>18K Gold, Emerald & Diamond</p>
+              <div class="collection-price">£4,150</div>
+            </div>
+          </div>
+
+          <!-- Collection Item 6 -->
+          <div class="collection-item" data-id="6">
+            <img src="/api/placeholder/400/600" alt="Diamond Bracelet" />
+            <div class="collection-overlay">
+              <h3>Cascade Diamond Bracelet</h3>
+              <p>Platinum & Diamond</p>
+              <div class="collection-price">£5,680</div>
+            </div>
+          </div>
+
+          <!-- Collection Item 7 -->
+          <div class="collection-item" data-id="7">
+            <img src="/api/placeholder/400/600" alt="Ruby Necklace" />
+            <div class="collection-overlay">
+              <h3>Crimson Ruby Necklace</h3>
+              <p>18K Gold & Ruby</p>
+              <div class="collection-price">£3,490</div>
+            </div>
+          </div>
+
+          <!-- Collection Item 8 -->
+          <div class="collection-item" data-id="8">
+            <img src="/api/placeholder/400/600" alt="Diamond Earrings" />
+            <div class="collection-overlay">
+              <h3>Starburst Diamond Earrings</h3>
+              <p>18K White Gold & Diamond</p>
+              <div class="collection-price">£2,350</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-            </div>
-            <div class="contact-container">
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Submit</button>
-                    </form>
-                </div>
-                <div class="contact-info">
-                    <h3>Our Information</h3>
-                    <div class="contact-details">
-                        <div class="contact-detail">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Location</h4>
-                                <p>15 Bond Street, Mayfair<br>London, W1S 4TT<br>United Kingdom</p>
-                            </div>
-                        </div>
-                        <div class="contact-detail">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Phone</h4>
-                                <p>+44 20 7123 4567</p>
-                            </div>
-                        </div>
-                        <div class="contact-detail">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <p>info@pazaib.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-detail">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Opening Hours</h4>
-                                <p>Monday - Saturday: 10:00 AM - 7:00 PM<br>Sunday: 12:00 PM - 5:00 PM</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="map-container">
-                        <img src="/api/placeholder/600/300" alt="Map">
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact Us</h2>
         </div>
+        <div class="contact-container">
+          <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn">Submit</button>
+            </form>
+          </div>
+          <div class="contact-info">
+            <h3>Our Information</h3>
+            <div class="contact-details">
+              <div class="contact-detail">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Location</h4>
+                  <p>
+                    15 Bond Street, Mayfair<br />London, W1S 4TT<br />United
+                    Kingdom
+                  </p>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Phone</h4>
+                  <p>+44 20 7123 4567</p>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Email</h4>
+                  <p>info@Jewls.com</p>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Opening Hours</h4>
+                  <p>
+                    Monday - Saturday: 10:00 AM - 7:00 PM<br />Sunday: 12:00 PM
+                    - 5:00 PM
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="map-container">
+              <iframe
+                width="100%"
+                height="100%"
+                style="border: 0"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://maps.google.com/maps?q=Z%C3%BCrich%20Hauptbahnhof&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-about">
-                    <div class="footer-logo">Pazaib <span>London</span></div>
-                    <p>Pazaib London creates exquisite jewellery pieces that blend timeless elegance with contemporary design. Each creation represents the pinnacle of luxury craftsmanship.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#collection">Collection</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#">Shop</a></li>
-                    </ul>
-                </div>
-                <div class="footer-newsletter">
-                    <h3 class="footer-title">Newsletter</h3>
-                    <p>Subscribe to receive updates on new collections and exclusive offers.</p>
-                    <form class="newsletter-form">
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <button type="submit" class="btn">Subscribe</button>
-                    </form>
-                </div>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-about">
+            <div class="footer-logo">Jewls <span>London</span></div>
+            <p>
+              Jewls London creates exquisite jewellery pieces that blend
+              timeless elegance with contemporary design. Each creation
+              represents the pinnacle of luxury craftsmanship.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-pinterest-p"></i
+              ></a>
             </div>
-            <div class="copyright">
-                <p>© 2025 Pazaib London. All Rights Reserved.</p>
-            </div>
+          </div>
+          <div class="footer-links">
+            <h3 class="footer-title">Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#collection">Collection</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#">Shop</a></li>
+            </ul>
+          </div>
+          <div class="footer-newsletter">
+            <h3 class="footer-title">Newsletter</h3>
+            <p>
+              Subscribe to receive updates on new collections and exclusive
+              offers.
+            </p>
+            <form class="newsletter-form">
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn">Subscribe</button>
+            </form>
+          </div>
         </div>
+        <div class="copyright">
+          <p>© 2025 Jewls London. All Rights Reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <!-- Product Modal -->
     <div class="modal" id="productModal">
-        <div class="modal-content">
-            <span class="modal-close"><i class="fas fa-times"></i></span>
-            <div class="modal-body">
-                <div class="modal-image">
-                    <img src="/api/placeholder/" alt="Product" id="modalImage">
-                </div>
-                <div class="modal-info">
-                    <div class="modal-category" id="modalCategory">Category</div>
-                    <h2 class="modal-title" id="modalTitle">Product Title</h2>
-                    <div class="modal-price" id="modalPrice">£0</div>
-                    <div class="modal-description" id="modalDescription">
-                        <p>This exquisite piece exemplifies Pazaib's commitment to exceptional craftsmanship and timeless design. Handcrafted by master artisans in our London atelier, this luxurious creation features only the finest ethically sourced materials.</p>
-                        <p>Each Pazaib piece comes beautifully presented in our signature packaging with a certificate of authenticity and a complimentary first cleaning and inspection service.</p>
-                    </div>
-                    <div class="modal-actions">
-                        <button class="btn">Add to Cart</button>
-                        <button class="btn">Book Appointment</button>
-                    </div>
-                </div>
+      <div class="modal-content">
+        <span class="modal-close"><i class="fas fa-times"></i></span>
+        <div class="modal-body">
+          <div class="modal-image">
+            <img src="/api/placeholder/" alt="Product" id="modalImage" />
+          </div>
+          <div class="modal-info">
+            <div class="modal-category" id="modalCategory">Category</div>
+            <h2 class="modal-title" id="modalTitle">Product Title</h2>
+            <div class="modal-price" id="modalPrice">£0</div>
+            <div class="modal-description" id="modalDescription">
+              <p>
+                This exquisite piece exemplifies Jewls's commitment to
+                exceptional craftsmanship and timeless design. Handcrafted by
+                master artisans in our London atelier, this luxurious creation
+                features only the finest ethically sourced materials.
+              </p>
+              <p>
+                Each Jewls piece comes beautifully presented in our signature
+                packaging with a certificate of authenticity and a complimentary
+                first cleaning and inspection service.
+              </p>
             </div>
+            <div class="modal-actions">
+              <button class="btn">Add to Cart</button>
+              <button class="btn">Book Appointment</button>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- JavaScript -->
     <script>
-        // Navigation Menu Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
+      // Navigation Menu Toggle
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      // Close menu when clicking a link
+      document.querySelectorAll(".nav-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
         });
-        
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
+      });
+
+      // Header Scroll Effect
+      window.addEventListener("scroll", () => {
+        const header = document.getElementById("header");
+        if (window.scrollY > 50) {
+          header.style.padding = "5px 0";
+          header.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
+        } else {
+          header.style.padding = "10px 0";
+          header.style.boxShadow = "none";
+        }
+      });
+
+      // Product Modal
+      const collectionItems = document.querySelectorAll(".collection-item");
+      const modal = document.getElementById("productModal");
+      const modalClose = document.querySelector(".modal-close");
+      const modalImage = document.getElementById("modalImage");
+      const modalCategory = document.getElementById("modalCategory");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalPrice = document.getElementById("modalPrice");
+
+      // Product Data
+      const products = [
+        {
+          id: 1,
+          title: "Celestial Diamond Ring",
+          category: "Platinum & Diamond",
+          price: "£3,250",
+          image: "/api/placeholder/Celestial-Diamond-Ring.png",
+          description:
+            "A stunning platinum ring featuring a constellation of brilliant-cut diamonds. This celestial-inspired piece captures the light from every angle, creating a mesmerizing sparkle that draws the eye.",
+        },
+        {
+          id: 2,
+          title: "Azure Sapphire Pendant",
+          category: "18K Gold & Sapphire",
+          price: "£2,780",
+          image: "/api/placeholder/600/800",
+          description:
+            "This elegant pendant features a rare azure sapphire of exceptional clarity, delicately suspended on an 18K gold chain. The deep blue hue represents wisdom and nobility.",
+        },
+        {
+          id: 3,
+          title: "Infinity Gold Bracelet",
+          category: "18K Gold",
+          price: "£1,950",
+          image: "/api/placeholder/600/800",
+          description:
+            "Our signature infinity bracelet crafted from solid 18K gold symbolizes endless possibility. The flowing design contours gracefully to the wrist for everyday luxury.",
+        },
+        {
+          id: 4,
+          title: "Luminous Pearl Earrings",
+          category: "Sterling Silver & Pearl",
+          price: "£890",
+          image: "/api/placeholder/600/800",
+          description:
+            "These timeless earrings feature lustrous South Sea pearls set in artfully crafted sterling silver. The perfect balance of classic elegance and contemporary design.",
+        },
+        {
+          id: 5,
+          title: "Emerald Halo Ring",
+          category: "18K Gold, Emerald & Diamond",
+          price: "£4,150",
+          image: "/api/placeholder/600/800",
+          description:
+            "A magnificent emerald takes center stage in this regal ring, surrounded by a halo of brilliant-cut diamonds set in 18K gold. An extraordinary statement piece.",
+        },
+        {
+          id: 6,
+          title: "Cascade Diamond Bracelet",
+          category: "Platinum & Diamond",
+          price: "£5,680",
+          image: "/api/placeholder/600/800",
+          description:
+            "This breathtaking bracelet features graduated diamonds set in platinum that create the effect of a cascading waterfall of light. A true masterpiece of jewelry design.",
+        },
+        {
+          id: 7,
+          title: "Crimson Ruby Necklace",
+          category: "18K Gold & Ruby",
+          price: "£3,490",
+          image: "/api/placeholder/600/800",
+          description:
+            "A vibrant ruby pendant suspended on an 18K gold chain. The deep crimson gemstone symbolizes passion and prosperity, making it both meaningful and beautiful.",
+        },
+        {
+          id: 8,
+          title: "Starburst Diamond Earrings",
+          category: "18K White Gold & Diamond",
+          price: "£2,350",
+          image: "/api/placeholder/600/800",
+          description:
+            "These radiant earrings feature diamonds arranged in a starburst pattern, set in 18K white gold. Their versatile design transitions effortlessly from day to evening wear.",
+        },
+      ];
+
+      // Open Modal with Product Details
+      collectionItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const productId = parseInt(item.getAttribute("data-id"));
+          const product = products.find((p) => p.id === productId);
+
+          modalImage.src = product.image;
+          modalCategory.textContent = product.category;
+          modalTitle.textContent = product.title;
+          modalPrice.textContent = product.price;
+          document.getElementById(
+            "modalDescription"
+          ).innerHTML = `<p>${product.description}</p>
+                <p>Each Jewls piece comes beautifully presented in our signature packaging with a certificate of authenticity and a complimentary first cleaning and inspection service.</p>`;
+
+          modal.classList.add("active");
+          document.body.style.overflow = "hidden";
         });
-        
-        // Header Scroll Effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.style.padding = '5px 0';
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.padding = '10px 0';
-                header.style.boxShadow = 'none';
-            }
-        });
-        
-        // Product Modal
-        const collectionItems = document.querySelectorAll('.collection-item');
-        const modal = document.getElementById('productModal');
-        const modalClose = document.querySelector('.modal-close');
-        const modalImage = document.getElementById('modalImage');
-        const modalCategory = document.getElementById('modalCategory');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalPrice = document.getElementById('modalPrice');
-        
-        // Product Data
-        const products = [
-            {
-                id: 1,
-                title: 'Celestial Diamond Ring',
-                category: 'Platinum & Diamond',
-                price: '£3,250',
-                image: '/api/placeholder/Celestial-Diamond-Ring.png',
-                description: 'A stunning platinum ring featuring a constellation of brilliant-cut diamonds. This celestial-inspired piece captures the light from every angle, creating a mesmerizing sparkle that draws the eye.'
-            },
-            {
-                id: 2,
-                title: 'Azure Sapphire Pendant',
-                category: '18K Gold & Sapphire',
-                price: '£2,780',
-                image: '/api/placeholder/600/800',
-                description: 'This elegant pendant features a rare azure sapphire of exceptional clarity, delicately suspended on an 18K gold chain. The deep blue hue represents wisdom and nobility.'
-            },
-            {
-                id: 3,
-                title: 'Infinity Gold Bracelet',
-                category: '18K Gold',
-                price: '£1,950',
-                image: '/api/placeholder/600/800',
-                description: 'Our signature infinity bracelet crafted from solid 18K gold symbolizes endless possibility. The flowing design contours gracefully to the wrist for everyday luxury.'
-            },
-            {
-                id: 4,
-                title: 'Luminous Pearl Earrings',
-                category: 'Sterling Silver & Pearl',
-                price: '£890',
-                image: '/api/placeholder/600/800',
-                description: 'These timeless earrings feature lustrous South Sea pearls set in artfully crafted sterling silver. The perfect balance of classic elegance and contemporary design.'
-            },
-            {
-                id: 5,
-                title: 'Emerald Halo Ring',
-                category: '18K Gold, Emerald & Diamond',
-                price: '£4,150',
-                image: '/api/placeholder/600/800',
-                description: 'A magnificent emerald takes center stage in this regal ring, surrounded by a halo of brilliant-cut diamonds set in 18K gold. An extraordinary statement piece.'
-            },
-            {
-                id: 6,
-                title: 'Cascade Diamond Bracelet',
-                category: 'Platinum & Diamond',
-                price: '£5,680',
-                image: '/api/placeholder/600/800',
-                description: 'This breathtaking bracelet features graduated diamonds set in platinum that create the effect of a cascading waterfall of light. A true masterpiece of jewelry design.'
-            },
-            {
-                id: 7,
-                title: 'Crimson Ruby Necklace',
-                category: '18K Gold & Ruby',
-                price: '£3,490',
-                image: '/api/placeholder/600/800',
-                description: 'A vibrant ruby pendant suspended on an 18K gold chain. The deep crimson gemstone symbolizes passion and prosperity, making it both meaningful and beautiful.'
-            },
-            {
-                id: 8,
-                title: 'Starburst Diamond Earrings',
-                category: '18K White Gold & Diamond',
-                price: '£2,350',
-                image: '/api/placeholder/600/800',
-                description: 'These radiant earrings feature diamonds arranged in a starburst pattern, set in 18K white gold. Their versatile design transitions effortlessly from day to evening wear.'
-            }
-        ];
-        
-        // Open Modal with Product Details
-        collectionItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const productId = parseInt(item.getAttribute('data-id'));
-                const product = products.find(p => p.id === productId);
-                
-                modalImage.src = product.image;
-                modalCategory.textContent = product.category;
-                modalTitle.textContent = product.title;
-                modalPrice.textContent = product.price;
-                document.getElementById('modalDescription').innerHTML = `<p>${product.description}</p>
-                <p>Each Pazaib piece comes beautifully presented in our signature packaging with a certificate of authenticity and a complimentary first cleaning and inspection service.</p>`;
-                
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-        
-        // Close Modal
-        modalClose.addEventListener('click', () => {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-        
-        // Close Modal when clicking outside
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        // Contact Form Submission
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const formData = new FormData(contactForm);
-            
-            // Here you would typically send the form data to a server
-            // For demonstration purposes, we'll just show an alert
-            alert('Thank you for your message. We will get back to you shortly.');
-            contactForm.reset();
-        });
-        
-        // Newsletter Form Submission
-        const newsletterForm = document.querySelector('.newsletter-form');
-        newsletterForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Here you would typically send the email to a server
-            // For demonstration purposes, we'll just show an alert
-            alert('Thank you for subscribing to our newsletter.');
-            newsletterForm.reset();
-        });
-        
-        // Shop Link Click
-        const shopLink = document.querySelector('.shop-link');
-        shopLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Our online shop is coming soon! Please visit our store or contact us for any inquiries.');
-        });
+      });
+
+      // Close Modal
+      modalClose.addEventListener("click", () => {
+        modal.classList.remove("active");
+        document.body.style.overflow = "auto";
+      });
+
+      // Close Modal when clicking outside
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+          document.body.style.overflow = "auto";
+        }
+      });
+
+      // Contact Form Submission
+      const contactForm = document.getElementById("contactForm");
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(contactForm);
+
+        // Here you would typically send the form data to a server
+        // For demonstration purposes, we'll just show an alert
+        alert("Thank you for your message. We will get back to you shortly.");
+        contactForm.reset();
+      });
+
+      // Newsletter Form Submission
+      const newsletterForm = document.querySelector(".newsletter-form");
+      newsletterForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Here you would typically send the email to a server
+        // For demonstration purposes, we'll just show an alert
+        alert("Thank you for subscribing to our newsletter.");
+        newsletterForm.reset();
+      });
+
+      // Shop Link Click
+      const shopLink = document.querySelector(".shop-link");
+      shopLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        alert(
+          "Our online shop is coming soon! Please visit our store or contact us for any inquiries."
+        );
+      });
     </script>
-</body>
+  </body>
 </html>
