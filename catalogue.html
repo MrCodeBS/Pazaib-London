@@ -2,7 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <title>Jewls London - Catalogue</title>
     <link
       rel="stylesheet"
@@ -114,7 +123,11 @@
         <span class="modal-close"><i class="fas fa-times"></i></span>
         <div class="modal-body">
           <div class="modal-image">
-            <img src="/api/placeholder/" alt="Product" id="modalImage" />
+            <img
+              src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&h=800&fit=crop&crop=center"
+              alt="Product"
+              id="modalImage"
+            />
           </div>
           <div class="modal-info">
             <div class="modal-category" id="modalCategory">Category</div>
@@ -136,120 +149,97 @@
 
     <!-- JavaScript -->
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        // Navigation Menu Toggle
+      document.addEventListener("DOMContentLoaded", () => {
+        // Mobile detection and optimization
+        const isMobile =
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          );
+
+        // Navigation Menu Toggle with improved mobile handling
         const hamburger = document.querySelector(".hamburger");
         const navMenu = document.querySelector(".nav-menu");
+        const body = document.body;
 
         if (hamburger && navMenu) {
-          hamburger.addEventListener("click", () => {
+          hamburger.addEventListener("click", (e) => {
+            e.preventDefault();
             hamburger.classList.toggle("active");
             navMenu.classList.toggle("active");
+
+            // Prevent body scroll when menu is open on mobile
+            if (navMenu.classList.contains("active")) {
+              body.style.overflow = "hidden";
+            } else {
+              body.style.overflow = "auto";
+            }
           });
 
           document.querySelectorAll(".nav-menu a").forEach((link) => {
             link.addEventListener("click", () => {
               // Close menu if it's an internal link or points to index.html sections
               const href = link.getAttribute("href");
-              if (href && (href.startsWith("index.html#") || href === "catalogue.html" || href.startsWith("#"))) {
-                 if (navMenu.classList.contains("active")) { // Only close if active
-                    hamburger.classList.remove("active");
-                    navMenu.classList.remove("active");
-                 }
+              if (
+                href &&
+                (href.startsWith("index.html#") ||
+                  href === "catalogue.html" ||
+                  href.startsWith("#"))
+              ) {
+                if (navMenu.classList.contains("active")) {
+                  // Only close if active
+                  hamburger.classList.remove("active");
+                  navMenu.classList.remove("active");
+                  body.style.overflow = "auto";
+                }
               }
             });
+          });
+
+          // Close menu when clicking outside on mobile
+          document.addEventListener("click", (e) => {
+            if (
+              window.innerWidth <= 768 &&
+              !hamburger.contains(e.target) &&
+              !navMenu.contains(e.target) &&
+              navMenu.classList.contains("active")
+            ) {
+              hamburger.classList.remove("active");
+              navMenu.classList.remove("active");
+              body.style.overflow = "auto";
+            }
           });
         }
 
         // Header Scroll Effect
         const header = document.getElementById("header");
         if (header) {
-            window.addEventListener("scroll", () => {
+          window.addEventListener("scroll", () => {
             if (window.scrollY > 50) {
-                header.style.padding = "5px 0";
-                header.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
+              header.style.padding = "5px 0";
+              header.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
             } else {
-                header.style.padding = "10px 0"; // Adjusted to match initial padding in CSS
-                header.style.boxShadow = "none";
+              header.style.padding = "10px 0"; // Adjusted to match initial padding in CSS
+              header.style.boxShadow = "none";
             }
-            });
+          });
         }
 
-        // Product Data
-        const products = [
-          {
-            id: 1,
-            title: "Celestial Diamond Ring",
-            category: "Platinum & Diamond",
-            price: "£3,250",
-            image: "/api/placeholder/Celestial-Diamond-Ring.png",
-            description:
-              "A stunning platinum ring featuring a constellation of brilliant-cut diamonds. This celestial-inspired piece captures the light from every angle, creating a mesmerizing sparkle that draws the eye.",
-          },
-          {
-            id: 2,
-            title: "Azure Sapphire Pendant",
-            category: "18K Gold & Sapphire",
-            price: "£2,780",
-            image: "/api/placeholder/600/800",
-            description:
-              "This elegant pendant features a rare azure sapphire of exceptional clarity, delicately suspended on an 18K gold chain. The deep blue hue represents wisdom and nobility.",
-          },
-          {
-            id: 3,
-            title: "Infinity Gold Bracelet",
-            category: "18K Gold",
-            price: "£1,950",
-            image: "/api/placeholder/600/800",
-            description:
-              "Our signature infinity bracelet crafted from solid 18K gold symbolizes endless possibility. The flowing design contours gracefully to the wrist for everyday luxury.",
-          },
-          {
-            id: 4,
-            title: "Luminous Pearl Earrings",
-            category: "Sterling Silver & Pearl",
-            price: "£890",
-            image: "/api/placeholder/600/800",
-            description:
-              "These timeless earrings feature lustrous South Sea pearls set in artfully crafted sterling silver. The perfect balance of classic elegance and contemporary design.",
-          },
-          {
-            id: 5,
-            title: "Emerald Halo Ring",
-            category: "18K Gold, Emerald & Diamond",
-            price: "£4,150",
-            image: "/api/placeholder/600/800",
-            description:
-              "A magnificent emerald takes center stage in this regal ring, surrounded by a halo of brilliant-cut diamonds set in 18K gold. An extraordinary statement piece.",
-          },
-          {
-            id: 6,
-            title: "Cascade Diamond Bracelet",
-            category: "Platinum & Diamond",
-            price: "£5,680",
-            image: "/api/placeholder/600/800",
-            description:
-              "This breathtaking bracelet features graduated diamonds set in platinum that create the effect of a cascading waterfall of light. A true masterpiece of jewelry design.",
-          },
-          {
-            id: 7,
-            title: "Crimson Ruby Necklace",
-            category: "18K Gold & Ruby",
-            price: "£3,490",
-            image: "/api/placeholder/600/800",
-            description:
-              "A vibrant ruby pendant suspended on an 18K gold chain. The deep crimson gemstone symbolizes passion and prosperity, making it both meaningful and beautiful.",
-          },
-          {
-            id: 8,
-            title: "Starburst Diamond Earrings",
-            category: "18K White Gold & Diamond",
-            price: "£2,350",
-            image: "/api/placeholder/600/800",
-            description:
-              "These radiant earrings feature diamonds arranged in a starburst pattern, set in 18K white gold. Their versatile design transitions effortlessly from day to evening wear.",
-          },
-        ];
+        // Product Data - Load from JSON file
+        let products = [];
+
+        // Fetch products from JSON file
+        async function loadProducts() {
+          try {
+            const response = await fetch("products.json");
+            const data = await response.json();
+            products = data.products;
+            displayProducts();
+          } catch (error) {
+            console.error("Error loading products:", error);
+            // Fallback to empty array if JSON fails to load
+            products = [];
+          }
+        }
 
         // Product Modal Elements
         const modal = document.getElementById("productModal");
@@ -258,15 +248,18 @@
         const modalCategory = document.getElementById("modalCategory");
         const modalTitle = document.getElementById("modalTitle");
         const modalPrice = document.getElementById("modalPrice");
-        const modalDescriptionElem = document.getElementById("modalDescription");
+        const modalDescriptionElem =
+          document.getElementById("modalDescription");
         const modalAddToCartBtn = document.getElementById("modalAddToCartBtn");
-        const modalBookAppointmentBtn = document.getElementById("modalBookAppointmentBtn");
-        
+        const modalBookAppointmentBtn = document.getElementById(
+          "modalBookAppointmentBtn"
+        );
+
         const catalogueGrid = document.getElementById("catalogueGrid");
 
         function displayProducts() {
           if (!catalogueGrid) return;
-          products.forEach(product => {
+          products.forEach((product) => {
             const item = document.createElement("div");
             item.classList.add("collection-item");
             item.setAttribute("data-id", product.id);
@@ -278,32 +271,65 @@
                     <div class="collection-price">${product.price}</div>
                 </div>
             `;
-            item.addEventListener("click", () => {
-              openModalWithProduct(product.id);
+
+            // Improved touch handling for mobile
+            let touchStartTime = 0;
+
+            item.addEventListener("touchstart", () => {
+              touchStartTime = Date.now();
             });
+
+            item.addEventListener("touchend", (e) => {
+              const touchDuration = Date.now() - touchStartTime;
+              if (touchDuration < 500) {
+                // Quick tap
+                e.preventDefault();
+                openModalWithProduct(product.id);
+              }
+            });
+
+            // Keep click handler for desktop
+            item.addEventListener("click", () => {
+              if (!isMobile) {
+                openModalWithProduct(product.id);
+              }
+            });
+
             catalogueGrid.appendChild(item);
           });
         }
 
         function openModalWithProduct(productId) {
           const product = products.find((p) => p.id === productId);
-          if (product && modal && modalImage && modalCategory && modalTitle && modalPrice && modalDescriptionElem) {
+          if (
+            product &&
+            modal &&
+            modalImage &&
+            modalCategory &&
+            modalTitle &&
+            modalPrice &&
+            modalDescriptionElem
+          ) {
             modalImage.src = product.image;
             modalCategory.textContent = product.category;
             modalTitle.textContent = product.title;
             modalPrice.textContent = product.price;
             modalDescriptionElem.innerHTML = `<p>${product.description}</p>
                 <p>Each Jewls piece comes beautifully presented in our signature packaging with a certificate of authenticity and a complimentary first cleaning and inspection service.</p>`;
-            
+
             if (modalAddToCartBtn) {
-                modalAddToCartBtn.onclick = () => {
-                    alert(`Adding "${product.title}" to cart is a planned feature!`);
-                };
+              modalAddToCartBtn.onclick = () => {
+                alert(
+                  `Adding "${product.title}" to cart is a planned feature!`
+                );
+              };
             }
             if (modalBookAppointmentBtn) {
-                modalBookAppointmentBtn.onclick = () => {
-                    alert(`To book an appointment regarding "${product.title}", please use the contact form or call us. Online booking coming soon!`);
-                };
+              modalBookAppointmentBtn.onclick = () => {
+                alert(
+                  `To book an appointment regarding "${product.title}", please use the contact form or call us. Online booking coming soon!`
+                );
+              };
             }
 
             modal.classList.add("active");
@@ -312,32 +338,97 @@
         }
 
         if (modalClose && modal) {
-            modalClose.addEventListener("click", () => {
-                modal.classList.remove("active");
-                document.body.style.overflow = "auto";
-            });
+          modalClose.addEventListener("click", () => {
+            modal.classList.remove("active");
+            document.body.style.overflow = "auto";
+          });
         }
 
         if (modal) {
-            window.addEventListener("click", (e) => {
-                if (e.target === modal) {
-                modal.classList.remove("active");
-                document.body.style.overflow = "auto";
-                }
-            });
+          window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+              modal.classList.remove("active");
+              document.body.style.overflow = "auto";
+            }
+          });
         }
 
-        displayProducts();
+        // Load products when page loads
+        loadProducts();
 
         // Newsletter Form Submission for Catalogue Page
-        const catalogueNewsletterForm = document.getElementById("catalogueNewsletterForm");
+        const catalogueNewsletterForm = document.getElementById(
+          "catalogueNewsletterForm"
+        );
         if (catalogueNewsletterForm) {
-            catalogueNewsletterForm.addEventListener("submit", (e) => {
-                e.preventDefault();
-                alert("Thank you for subscribing to our newsletter.");
-                catalogueNewsletterForm.reset();
-            });
+          catalogueNewsletterForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            // Mobile-friendly success message
+            if (isMobile) {
+              const notification = document.createElement("div");
+              notification.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: var(--gold);
+                    color: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    z-index: 10000;
+                    text-align: center;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                  `;
+              notification.textContent = "Thank you for subscribing!";
+              document.body.appendChild(notification);
+
+              setTimeout(() => {
+                document.body.removeChild(notification);
+              }, 3000);
+            } else {
+              alert("Thank you for subscribing to our newsletter.");
+            }
+
+            catalogueNewsletterForm.reset();
+          });
         }
+
+        // Handle orientation change
+        window.addEventListener("orientationchange", () => {
+          setTimeout(() => {
+            // Close mobile menu on orientation change
+            if (navMenu && navMenu.classList.contains("active")) {
+              hamburger.classList.remove("active");
+              navMenu.classList.remove("active");
+              body.style.overflow = "auto";
+            }
+
+            // Close modal on orientation change for better UX
+            if (modal && modal.classList.contains("active")) {
+              modal.classList.remove("active");
+              document.body.style.overflow = "auto";
+            }
+          }, 100);
+        });
+
+        // Smooth scrolling optimization for mobile
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              const headerHeight =
+                document.getElementById("header").offsetHeight;
+              const targetPosition = target.offsetTop - headerHeight - 20;
+
+              window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
       });
     </script>
   </body>

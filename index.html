@@ -2,13 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <title>Jewls London - Luxury Jewellery</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- Header -->
@@ -51,7 +60,10 @@
         </div>
         <div class="about-content">
           <div class="about-image">
-            <img src="/api/placeholder/600/800" alt="Jewls Workshop" />
+            <img
+              src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&h=800&fit=crop&crop=center"
+              alt="Jewls Workshop"
+            />
           </div>
           <div class="about-text">
             <h3>Our Heritage</h3>
@@ -101,7 +113,10 @@
 
           <!-- Collection Item 2 -->
           <div class="collection-item" data-id="2">
-            <img src="/api/placeholder/400/600" alt="Sapphire Necklace" />
+            <img
+              src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=600&fit=crop&crop=center"
+              alt="Sapphire Necklace"
+            />
             <div class="collection-overlay">
               <h3>Azure Sapphire Pendant</h3>
               <p>18K Gold & Sapphire</p>
@@ -111,7 +126,10 @@
 
           <!-- Collection Item 3 -->
           <div class="collection-item" data-id="3">
-            <img src="/api/placeholder/400/600" alt="Gold Bracelet" />
+            <img
+              src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=400&h=600&fit=crop&crop=center"
+              alt="Gold Bracelet"
+            />
             <div class="collection-overlay">
               <h3>Infinity Gold Bracelet</h3>
               <p>18K Gold</p>
@@ -121,7 +139,10 @@
 
           <!-- Collection Item 4 -->
           <div class="collection-item" data-id="4">
-            <img src="/api/placeholder/400/600" alt="Pearl Earrings" />
+            <img
+              src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=600&fit=crop&crop=center"
+              alt="Pearl Earrings"
+            />
             <div class="collection-overlay">
               <h3>Luminous Pearl Earrings</h3>
               <p>Sterling Silver & Pearl</p>
@@ -131,7 +152,10 @@
 
           <!-- Collection Item 5 -->
           <div class="collection-item" data-id="5">
-            <img src="/api/placeholder/400/600" alt="Emerald Ring" />
+            <img
+              src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400&h=600&fit=crop&crop=center"
+              alt="Emerald Ring"
+            />
             <div class="collection-overlay">
               <h3>Emerald Halo Ring</h3>
               <p>18K Gold, Emerald & Diamond</p>
@@ -141,7 +165,10 @@
 
           <!-- Collection Item 6 -->
           <div class="collection-item" data-id="6">
-            <img src="/api/placeholder/400/600" alt="Diamond Bracelet" />
+            <img
+              src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=600&fit=crop&crop=center"
+              alt="Diamond Bracelet"
+            />
             <div class="collection-overlay">
               <h3>Cascade Diamond Bracelet</h3>
               <p>Platinum & Diamond</p>
@@ -151,7 +178,10 @@
 
           <!-- Collection Item 7 -->
           <div class="collection-item" data-id="7">
-            <img src="/api/placeholder/400/600" alt="Ruby Necklace" />
+            <img
+              src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400&h=600&fit=crop&crop=center"
+              alt="Ruby Necklace"
+            />
             <div class="collection-overlay">
               <h3>Crimson Ruby Necklace</h3>
               <p>18K Gold & Ruby</p>
@@ -161,7 +191,10 @@
 
           <!-- Collection Item 8 -->
           <div class="collection-item" data-id="8">
-            <img src="/api/placeholder/400/600" alt="Diamond Earrings" />
+            <img
+              src="https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=400&h=600&fit=crop&crop=center"
+              alt="Diamond Earrings"
+            />
             <div class="collection-overlay">
               <h3>Starburst Diamond Earrings</h3>
               <p>18K White Gold & Diamond</p>
@@ -366,22 +399,54 @@
 
     <!-- JavaScript -->
     <script>
-      // Navigation Menu Toggle
+      // Mobile detection and optimization
+      const isMobile =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        );
+
+      // Navigation Menu Toggle with improved mobile handling
       const hamburger = document.querySelector(".hamburger");
       const navMenu = document.querySelector(".nav-menu");
+      const body = document.body;
 
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-      });
+      if (hamburger && navMenu) {
+        hamburger.addEventListener("click", (e) => {
+          e.preventDefault();
+          hamburger.classList.toggle("active");
+          navMenu.classList.toggle("active");
 
-      // Close menu when clicking a link
-      document.querySelectorAll(".nav-menu a").forEach((link) => {
-        link.addEventListener("click", () => {
-          hamburger.classList.remove("active");
-          navMenu.classList.remove("active");
+          // Prevent body scroll when menu is open on mobile
+          if (navMenu.classList.contains("active")) {
+            body.style.overflow = "hidden";
+          } else {
+            body.style.overflow = "auto";
+          }
         });
-      });
+
+        // Close menu when clicking a link
+        document.querySelectorAll(".nav-menu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+            body.style.overflow = "auto";
+          });
+        });
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener("click", (e) => {
+          if (
+            window.innerWidth <= 768 &&
+            !hamburger.contains(e.target) &&
+            !navMenu.contains(e.target) &&
+            navMenu.classList.contains("active")
+          ) {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+            body.style.overflow = "auto";
+          }
+        });
+      }
 
       // Header Scroll Effect
       window.addEventListener("scroll", () => {

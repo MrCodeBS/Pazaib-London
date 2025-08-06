@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Celestial Diamond Ring",
+      "category": "Platinum & Diamond",
+      "price": "£3,250",
+      "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=600&fit=crop&crop=center",
+      "description": "A stunning platinum ring featuring a constellation of brilliant-cut diamonds. This celestial-inspired piece captures the light from every angle, creating a mesmerizing sparkle that draws the eye."
+    },
+    {
+      "id": 2,
+      "title": "Azure Sapphire Pendant",
+      "category": "18K Gold & Sapphire",
+      "price": "£2,780",
+      "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=600&fit=crop&crop=center",
+      "description": "This elegant pendant features a rare azure sapphire of exceptional clarity, delicately suspended on an 18K gold chain. The deep blue hue represents wisdom and nobility."
+    },
+    {
+      "id": 3,
+      "title": "Infinity Gold Bracelet",
+      "category": "18K Gold",
+      "price": "£1,950",
+      "image": "https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=400&h=600&fit=crop&crop=center",
+      "description": "Our signature infinity bracelet crafted from solid 18K gold symbolizes endless possibility. The flowing design contours gracefully to the wrist for everyday luxury."
+    },
+    {
+      "id": 4,
+      "title": "Luminous Pearl Earrings",
+      "category": "Sterling Silver & Pearl",
+      "price": "£890",
+      "image": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=600&fit=crop&crop=center",
+      "description": "These timeless earrings feature lustrous South Sea pearls set in artfully crafted sterling silver. The perfect balance of classic elegance and contemporary design."
+    },
+    {
+      "id": 5,
+      "title": "Emerald Halo Ring",
+      "category": "18K Gold, Emerald & Diamond",
+      "price": "£4,150",
+      "image": "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=400&h=600&fit=crop&crop=center",
+      "description": "A magnificent emerald takes center stage in this regal ring, surrounded by a halo of brilliant-cut diamonds set in 18K gold. An extraordinary statement piece."
+    },
+    {
+      "id": 6,
+      "title": "Cascade Diamond Bracelet",
+      "category": "Platinum & Diamond",
+      "price": "£5,680",
+      "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=600&fit=crop&crop=center",
+      "description": "This breathtaking bracelet features graduated diamonds set in platinum that create the effect of a cascading waterfall of light. A true masterpiece of jewelry design."
+    },
+    {
+      "id": 7,
+      "title": "Crimson Ruby Necklace",
+      "category": "18K Gold & Ruby",
+      "price": "£3,490",
+      "image": "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400&h=600&fit=crop&crop=center",
+      "description": "A vibrant ruby pendant suspended on an 18K gold chain. The deep crimson gemstone symbolizes passion and prosperity, making it both meaningful and beautiful."
+    },
+    {
+      "id": 8,
+      "title": "Starburst Diamond Earrings",
+      "category": "18K White Gold & Diamond",
+      "price": "£2,350",
+      "image": "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=400&h=600&fit=crop&crop=center",
+      "description": "These radiant earrings feature diamonds arranged in a starburst pattern, set in 18K white gold. Their versatile design transitions effortlessly from day to evening wear."
+    }
+  ]
+}
